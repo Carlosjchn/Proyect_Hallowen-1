@@ -1,6 +1,7 @@
 package Combate;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Configuracion {
 
@@ -60,6 +61,16 @@ private static final Random random = new Random();
             System.out.println("User:    [" + "#".repeat(a)  + " ".repeat(10 - a )  + "]");
             return a;
         }
+        //void para funciones que no deven devolver nada
+        public static void limpiarPantalla() {
+            System.out.println(LIMPIAR_CMD_MACOS);
+            System.out.println(LIMPIAR_CMD_WINDOW);
+        }
+        public static void continuar(Scanner sc) {
+            System.out.println(ANSI_PURPLE + "Pulsa Enter para continuar" + ANSI_RESET);
+            sc.nextLine();
+            limpiarPantalla();
+        }
     
         
 
@@ -80,5 +91,6 @@ private static final Random random = new Random();
     //**LIMPIA CMD --> No toques*/
         public static final String LIMPIAR_CMD_WINDOW = "\033[H\033[2J";
         public static final String LIMPIAR_CMD_MACOS = "\u001b[2J";
+
 
 }
