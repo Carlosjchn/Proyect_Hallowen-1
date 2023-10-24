@@ -39,7 +39,7 @@ private static final Random random = new Random();
   /*
    * BOSS
    */
-        public static final String[] PROFESORES_NOMBRE_BOSS = {"paco","guilla","lidia"};
+        public static final String[] PROFESORES_NOMBRE_BOSS = {"paco","guilla","lidia","david","jesus"};
 
     
     /*
@@ -51,6 +51,7 @@ private static final Random random = new Random();
 
 
     //*METODOS */
+
         public static int barra_vida_user(int a){
             a = (int) (a * 10 / vida_user);
             System.out.println("User:    [" + "#".repeat(a)  + " ".repeat(10 - a )  + "]");

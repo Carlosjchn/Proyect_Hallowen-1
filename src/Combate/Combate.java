@@ -22,7 +22,7 @@ public class Combate {
       *Podemos hacer que escriban sus nombres y darle un numero del 1 al 5 para que 
       *su mini-juego sea totalmente aleatorio más adelante, esto puede servir como introducion
       */
-      System.out.println(ANSI_PURPLE + TXT_BIENVENIDA + "\n" + SUBRAYA.repeat(TXT_BIENVENIDA.length() )+ ANSI_RESET);
+      System.out.println(ANSI_PURPLE + TXT_BIENVENIDA + "\n" + SUBRAYA.repeat(TXT_BIENVENIDA.length())+ ANSI_RESET);
 
       String[]jugadores = new String[5];
        for (int i = 1 ; i <= 5 ; i++){ 
@@ -69,10 +69,6 @@ public class Combate {
    }
    System.out.println("\n");
     continuar(sc);
-
-
-   
-   
    
    }
 

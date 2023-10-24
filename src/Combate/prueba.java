@@ -2,31 +2,32 @@ package Combate;
 
 
 import static Combate.Configuracion.ATAQUE_BUENO_USER01;
+
+import java.util.Scanner;
 public class prueba {
 
-    public static int barra_vida_user(int a){
-        a = (int) (a * 20 / VIDA_USER);
-        System.out.println("User:    [" + "#".repeat(a)  + " ".repeat(20 - a )  + "]");
-        return a;
-    }
-    public static int barra_vida_boss(int a){
-        a = (int) (a * 20 / VIDA_BOSS);
-        System.out.println("User:    [" + "#".repeat(a)  + " ".repeat(20 - a )  + "]");
-        return a;
-    }
-
-    public static final int VIDA_USER = 100; //constante de vida
-    public static final int VIDA_BOSS = 100; //constante de vida
     
+    
+    public static int vida;
     public static void main(String[] args) {
-        int vida_user = VIDA_USER;
-        System.out.println("Vida de usuario : " + VIDA_USER);
-        System.out.println(ATAQUE_BUENO_USER01);
-        barra_vida_user(vida_user);
-
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escribe Resultado prueba 1 : ");
+        vida = sc.nextInt();
+        int vida_user= vida;
+        
+        barra_vida_user(vida);
+        System.out.println("Vida user " + vida);
         vida_user -= ATAQUE_BUENO_USER01;
-        System.out.println("El boss a atacado... 💥");
+        System.out.println("Boss ataca y quita un " + ATAQUE_BUENO_USER01 + "ps");
         barra_vida_user(vida_user);
+        sc.close();
     }
-
+    
+    public static int barra_vida_user(int a){
+        a = (int) (a * 10 / vida);
+        System.out.println("User:    [" + "#".repeat(a)  + " ".repeat(10 - a )  + "]");
+        return a;
+    }
+    
 }
