@@ -88,6 +88,15 @@ private static final Random random = new Random();
         public static final String ANSI_CYAN = "\u001B[36m";
         public static final String ANSI_WHITE = "\u001B[37m";
         public static final String ANSI_RESET = "\u001B[0m";
+        public static final String BOLD = "\033[1;0m";
+        public static final String BLACK_BOLD = "\033[1;30m";  // BLACK
+        public static final String RED_BOLD = "\033[1;31m";    // RED
+        public static final String GREEN_BOLD = "\033[1;32m";  // GREEN
+        public static final String YELLOW_BOLD = "\033[1;33m"; // YELLOW
+        public static final String BLUE_BOLD = "\033[1;34m";   // BLUE
+        public static final String PURPLE_BOLD = "\033[1;35m"; // PURPLE
+        public static final String CYAN_BOLD = "\033[1;36m";   // CYAN
+        public static final String WHITE_BOLD = "\033[1;37m";  // WHITE
 
         //Subraya el texto
         public static final String SUBRAYA = "-";
@@ -96,5 +105,6 @@ private static final Random random = new Random();
         public static final String LIMPIAR_CMD_WINDOW = "\033[H\033[2J";
         public static final String LIMPIAR_CMD_MACOS = "\u001b[2J";
 
-
+    
+        
 }
