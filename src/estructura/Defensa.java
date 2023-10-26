@@ -80,7 +80,7 @@ public class Defensa {
 
 		
 
-		System.out.println("El asesinato se produjo a las 19:00 de la tarde, tu llevas "+ tiempo+" horas aquí, \seguimos con las preguntas "
+		System.out.println("El asesinato se produjo a las 19:00 de la tarde, tu llevas "+ tiempo+" horas aquí, \nseguimos con las preguntas "
 
 				+ "seguimos con las preguntas.");
 

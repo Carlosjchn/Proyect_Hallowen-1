@@ -72,7 +72,10 @@ private static final Random random = new Random();
             sc.nextLine();
             limpiarPantalla();
         }
-    
+        public static void continuar2(Scanner sc) {
+            System.out.println(ANSI_PURPLE + "Pulsa Enter para continuar" + ANSI_RESET);
+            sc.nextLine();
+        }
         
 
     //*COLORES TEXTO --> No toques*/
