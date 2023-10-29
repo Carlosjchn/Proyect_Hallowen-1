@@ -20,8 +20,6 @@ public class Hpuser {
         }
         }
 
-
-
     public static void Separador(){
         System.out.println(ANSI_PURPLE+"======================================================================================"+ANSI_RESET);
     }
@@ -36,18 +34,58 @@ public class Hpuser {
             Thread.currentThread().interrupt();
         }
         }
-    
-    
-    
-
     }
+
+    public static void Estructura(String mensaje){
+        limpiarPantalla();
+        Separador();
+        Imprimir(mensaje);
+        Separador();
+    }
+    public static void Estructura2(String mensaje){
+        Separador();
+        Imprimir(mensaje);
+        Separador();
+    }
+    
+    
     public static void main(String args[]) throws InterruptedException{
-        String eleccion;
+
+
+        String calavera="           ______\r\n" + //
+                "        .-\"      \"-.\r\n" + //
+                "       /            \\\r\n" + //
+                "      |              |\r\n" + //
+                "      |,  .-.  .-.  ,|\r\n" + //
+                "      | )(__/  \\__)( |\r\n" + //
+                "      |/     /\\     \\|\r\n" + //
+                "      (_     ^^     _)\r\n" + //
+                "       \\__|IIIIII|__/\r\n" + //
+                "        | \\IIIIII/ |\r\n" + //
+                "        \\          /\r\n" + //
+                "         `--------`\r\n" + //
+                "";
+        String paloma="        _ === _\r\n" + //
+                "       / \\(_)/ \\\r\n" + //
+                "       | /   \\ |\r\n" + //
+                "       | \\\\ // |\r\n" + //
+                "       \\_/   \\_/\r\n" + //
+                "   .--\" /     \\ `\"-.\r\n" + //
+                "  (   ( '.___.'   ,')\r\n" + //
+                "   (__,-.       )--'\r\n" + //
+                "      '.____)--'";
+        String estrella="";
+
+
+        String eleccion=null;
+        String eleccion2=null;
         boolean buc=false;
         int vidaUser=100;
         String TXT_BIENVENIDA= "BIENVENIDO AL MINIJUEGO";
         String TXT_EXPLICACION= "EXPLICACIÓN" ;
         Scanner sc=new Scanner(System.in);
+
+        System.out.println(calavera+paloma);
 
         Separador();
         System.out.println(ANSI_PURPLE + TXT_BIENVENIDA + "\n" + SUBRAYA.repeat(TXT_BIENVENIDA.length())+ ANSI_RESET);
@@ -57,99 +95,112 @@ public class Hpuser {
 
         Separador();
         continuar(sc);
-
-            Separador();
-            Imprimir(ANSI_BLUE+"Despiertas en una habitación oscura. La escasa luz que puedes ver proviene de unos orificios en las paredes, que parecen ser de piedra antigua, el lugar en el que te encuentras huele a una mezcla entre humedad y moho... \n\nEntre el silencio y la oscuridad crees escuchar unos jadeos sin mucha fuerza, preguntas si hay alguien ahí, pero no recibes respuesta.\n\nTe levantas desorientado, siguiendo la pared con la mano, en busca de alguna puerta o interruptor. Tras darle un par de vueltas a la habitación, por fin consigues tocar lo que parece ser una caja de fusibles. Accionas todos los interruptores que consigues tocar, hasta que logras que se encienda una pequeña bombilla sin lámpara, que cuelga en el centro de la habitación.\n\nBajo la escasa luz que emite la bombilla, una anciana se encuentra luchando por respirar, tiene varios orificios en el torso, del que brota sangre oscura y espesa, utiliza sus pocas fuerzas para señalarte un viejo armario.\nTambién ves un perro de gran tamaño, pero muy desnutrido, encadenado a una gruesa viga de metal. Al otro extremo de la habitación, hay un comedero con comida a rebosar, pero no está al alcance del perro.\n"+ANSI_RESET);
-            Separador();
+        
+            Estructura(ANSI_BLUE+"Despiertas en una habitación oscura. La escasa luz que puedes ver proviene de unos orificios en las paredes, que parecen ser de piedra antigua, el lugar en el que te encuentras huele a una mezcla entre humedad y moho... \n\nEntre el silencio y la oscuridad crees escuchar unos jadeos sin mucha fuerza, preguntas si hay alguien ahí, pero no recibes respuesta.\n\nTe levantas desorientado, siguiendo la pared con la mano, en busca de alguna puerta o interruptor. Tras darle un par de vueltas a la habitación, por fin consigues tocar lo que parece ser una caja de fusibles. Accionas todos los interruptores que consigues tocar, hasta que logras que se encienda una pequeña bombilla sin lámpara, que cuelga en el centro de la habitación.\n\nBajo la escasa luz que emite la bombilla, una anciana se encuentra luchando por respirar, tiene varios orificios en el torso, del que brota sangre oscura y espesa, utiliza sus pocas fuerzas para señalarte un viejo armario.\nTambién ves un perro de gran tamaño, pero muy desnutrido, encadenado a una gruesa viga de metal. Al otro extremo de la habitación, hay un comedero con comida a rebosar, pero no está al alcance del perro.\n"+ANSI_RESET);
             
-            while(!buc){  
+            while(!buc){
+            if(eleccion2==null){
             System.out.println(ANSI_PURPLE+"¿Donde te diriges?\n \t (A)-Te diriges al comedero \t(B)-Te diriges al armario"+ANSI_RESET);
             eleccion=sc.nextLine().toLowerCase();
-            
-            switch(eleccion){
-                case "a","comedero":
-                    System.out.println(ANSI_PURPLE+"(A)-Estás muy hambriento, y te comes la comida del perro \t (B)-Coges el comedero y se lo acercas al perro. \t (C)-Decides no hacer nada."+ANSI_RESET);
-                        eleccion=sc.nextLine().toLowerCase();
-                        switch(eleccion){
-                            case "a","comer":
-                                limpiarPantalla();
-                                Separador();
-                                Imprimir(ANSI_BLUE+"Al comer esa basura, sacias un poco tu hambre."+ANSI_GREEN+"\n\t\t\t(Recuperas un poco de salud)\n"+ANSI_RESET);
-                                Separador();
-                                vidaUser=vidaUser+5;
-                            break;
-                            case "b","perro":
-                                limpiarPantalla();
-                                Separador();
-                                Imprimir(ANSI_BLUE+"El perro muy asustado te muerde. Provocándote una herida en el antebrazo."+ANSI_GREEN+"\n\t\t\t(Pierdes puntos salud)"+ANSI_BLUE+"\nTe ves obligado a estrangular al perro con su propia cadena hasta asfixiarlo\n"+ANSI_RESET);
-                                Separador();
-                                vidaUser=vidaUser-15;
-                            break;
-                            case "c","nada":
-                                limpiarPantalla();
-                                Separador();
-                                Imprimir(ANSI_BLUE+"No ocurre absolutamente nada.\n"+ANSI_RESET);
-                                Separador();
-                            break;
-                            default:
-                                System.out.println(ANSI_RED+"\t\t\tCREO QUE TE HAS EQUIVOCADO DE OPCION"+ANSI_RESET);
-                                System.out.println(ANSI_PURPLE+"(A)-Estás muy hambriento, y te comes la comida del perro \t (B)-Coges el comedero y se lo acercas al perro. \t (C)-Decides no hacer nada."+ANSI_RESET);
-                                eleccion=sc.nextLine();
-                        }
-                    buc=true;
-                break;
-                case "b","armario":
-                    limpiarPantalla();
-                    Separador();
-                    Imprimir(ANSI_BLUE+"Abres el armario, y ves que hay una botella muy antigua con la etiqueta desgastada, no consigues leer lo que pone. Parece una especie de elixir elaborado a mano. \nCuando la anciana te ve con la botella en la mano, se le ilumina la mirada y te hace un gesto con la mano para que se la des.\n"+ANSI_RESET);
-                    Separador();
-                    System.out.println(ANSI_PURPLE+"\n \t(A)-Le das la botella a la anciana \t (B)-Te bebes tú la botella"+ANSI_RESET);
-                    eleccion=sc.nextLine().toLowerCase();
-                        switch(eleccion){
-                            case "a":
-                                limpiarPantalla();
-                                Separador();
-                                Imprimir(ANSI_BLUE+"La anciana la bebe y se muere, era"+ANSI_RED+" veneno..."+ANSI_GREEN+"\n\t\t\t(Tu salud aumenta por la buena decision)\n"+ANSI_RESET);
-                                Separador();
-                                vidaUser=vidaUser+10;
-                            break;
-                            case "b":
-                                limpiarPantalla();
-                                Separador();
-                                Imprimir(ANSI_BLUE+"Al poco tiempo, empiezas a tener fiebre, vomitas sangre y se te nubla la visión"+ANSI_GREEN+"\n\t\t\t(Tu salud disminuye bastante)\n"+ANSI_RESET);
-                                Separador();
-                                vidaUser=vidaUser-25;
-                            break;
-                            default:
-
-                        }
-                    buc=true;
-                break;
-                default:
-                System.out.println(ANSI_RED+"\t\t\tESE NO ES NINGUN CAMINO, NO PUEDES ATRAVESAR PAREDES"+ANSI_RESET);
-                break;
             }
+                switch(eleccion){
+                    case "a","comedero":
+                        System.out.println(ANSI_PURPLE+"(A)-Estás muy hambriento, y te comes la comida del perro \t (B)-Coges el comedero y se lo acercas al perro. \t (C)-Decides no hacer nada."+ANSI_RESET);
+                        eleccion2=sc.nextLine().toLowerCase();
+                        buc=true;
+                            switch(eleccion2){
+                                case "a","comer":
+                                    Estructura(ANSI_BLUE+"Al comer esa basura, sacias un poco tu hambre."+ANSI_GREEN+"\n\t\t\t(Recuperas un poco de salud)\n"+ANSI_RESET);
+                                    vidaUser=vidaUser+5;
+                                break;
+                                case "b","perro":
+                                    Estructura(ANSI_BLUE+"El perro muy asustado te muerde. Provocándote una herida en el antebrazo."+ANSI_GREEN+"\n\t\t\t(Pierdes puntos salud)"+ANSI_BLUE+"\nTe ves obligado a estrangular al perro con su propia cadena hasta asfixiarlo\n"+ANSI_RESET);
+                                    vidaUser=vidaUser-15;
+                                break;
+                                case "c","nada":
+                                    Estructura(ANSI_BLUE+"No ocurre absolutamente nada.\n"+ANSI_RESET);
+                                break;
+                                default:
+                                    System.out.println(ANSI_RED+"\t\t\tCREO QUE TE HAS EQUIVOCADO DE OPCION"+ANSI_RESET);
+                                    buc=false;
+                                
+                            }
+                        
+                    break;
+                    case "b","armario":
+                        Estructura(ANSI_BLUE+"Abres el armario, y ves que hay una botella muy antigua con la etiqueta desgastada, no consigues leer lo que pone. Parece una especie de elixir elaborado a mano. \nCuando la anciana te ve con la botella en la mano, se le ilumina la mirada y te hace un gesto con la mano para que se la des.\n"+ANSI_RESET);
+
+                        System.out.println(ANSI_PURPLE+"\n \t(A)-Le das la botella a la anciana \t (B)-Te bebes tú la botella"+ANSI_RESET);
+                        eleccion2=sc.nextLine().toLowerCase();
+                        buc=true;
+                            switch(eleccion2){
+                                case "a":
+                                    Estructura(ANSI_BLUE+"La anciana la bebe y se muere, era"+ANSI_RED+" veneno..."+ANSI_GREEN+"\n\t\t\t(Tu salud aumenta por la buena decision)\n"+ANSI_RESET);
+                                    vidaUser=vidaUser+10;
+                                break;
+                                case "b":
+                                    Estructura(ANSI_BLUE+"Al poco tiempo, empiezas a tener fiebre, vomitas sangre y se te nubla la visión"+ANSI_GREEN+"\n\t\t\t(Tu salud disminuye bastante)\n"+ANSI_RESET);
+                                    vidaUser=vidaUser-25;
+                                break;
+                                default:
+                                    System.out.println(ANSI_RED+"\t\t\tCREO QUE TE HAS EQUIVOCADO DE OPCION"+ANSI_RESET);
+                                    buc=false;
+                                
+                            }
+                    break;
+                    default:
+                    System.out.println(ANSI_RED+"\t\t\tESE NO ES NINGUN CAMINO, NO PUEDES ATRAVESAR PAREDES"+ANSI_RESET);
+                    break;
+                }
+            
         }
         continuar(sc);
         buc=false;
     
-        Separador();
-        Imprimir(ANSI_BLUE+"La bombilla que luchaba por mantenerse encendida, finalmente se apaga, sumiendo la habitación en la oscuridad más absoluta, y comienzas a escuchar lo que parece ser un gas al otro lado de la pared, y notas que entra por los orificios de la pared de roca."+ANSI_BLUE+"\n\nEmpiezas a marearte, te esfuerzas por no perder el conocimiento... Sin darte cuenta, ya estás en el suelo sumiéndote en un profundo y forzado sueño.\n"+ANSI_RESET);
-        Separador();
+        Estructura(ANSI_BLUE+"La bombilla que luchaba por mantenerse encendida, finalmente se apaga, sumiendo la habitación en la oscuridad más absoluta, y comienzas a escuchar lo que parece ser un gas al otro lado de la pared, y notas que entra por los orificios de la pared de roca."+ANSI_BLUE+"\n\nEmpiezas a marearte, te esfuerzas por no perder el conocimiento... Sin darte cuenta, ya estás en el suelo sumiéndote en un profundo y forzado sueño.\n"+ANSI_RESET);
         continuar(sc);
         Imprimir2(".....\n");
-        limpiarPantalla();
-        Separador();
-        Imprimir(ANSI_BLUE+"Una luz pálida de gran intensidad te obliga a abrir los ojos, estás semiconsciente, lo suficiente para darte cuenta de que estas encadenado en una silla en una sala completamente blanca y vacía, excepto por una mesa que hay al otro extremo.\n\nUna voz a través de un altavoz con un volumen demasiado alto y estridente te habla:"+ANSI_RESET);
-        Imprimir(ANSI_YELLOW+"\n·Altavoz: "+ANSI_RESET+BOLD+"<< FRENTE A TI TIENES UNA MESA CON DIFERENTES OBJETOS, 6 EN TOTAL, PUEDES COGER TRES DE ELLOS, ELIGE BIEN LO QUE VAS A ESCOGER, PUES TE SERÁN DE ULTILIDAD MÁS ADELANTE >>\n");
+        Estructura(ANSI_BLUE+"Una luz pálida de gran intensidad te obliga a abrir los ojos, estás semiconsciente, lo suficiente para darte cuenta de que estas encadenado en una silla en una sala completamente blanca y vacía, excepto por una mesa que hay al otro extremo.\n\nUna voz a través de un altavoz con un volumen demasiado alto y estridente te habla:\n"+ANSI_RESET+ANSI_YELLOW+"\n·Altavoz: "+RED_BOLD+"<< FRENTE A TI TIENES UNA MESA CON DIFERENTES OBJETOS, 6 EN TOTAL, PUEDES COGER TRES DE ELLOS, ELIGE BIEN LO QUE VAS A ESCOGER, PUES TE SERÁN DE ULTILIDAD MÁS ADELANTE >>\n"+ANSI_RESET);
 
-        Separador();
-
-        while(!buc){
-
-
+        
+        System.out.println(ANSI_PURPLE+"El dispositivo con el que estabas encadenado se libera, te levantas y te diriges a la mesa, observas los objetos que hay en ella y te dispones a coger tres de ellos.\n \t(1)-VENDAS \t(2)-PASTILLAS \t(3)-TRAPO HÚMEDO \n\t(4)-CRUCIFIJO PLATEADO \t(5)-LLAVE DE ORO \t(6)-ELIXIR MISTERIOSO"+ANSI_RESET);
+        eleccion=sc.nextLine().toLowerCase();
+        switch(eleccion){
+            case "1","4","6":
+                Estructura2(ANSI_GREEN+"\t\t\t(Tu salud sube ligeramente)\n"+ANSI_RESET);
+                vidaUser=vidaUser+5;
+            break;
+            case "2","3","5":
+                Estructura2(ANSI_GREEN+"(\t\t\tTu salud baja ligeramente)\n"+ANSI_RESET);
+                vidaUser=vidaUser-5;
+            break;
+            default:
+                Estructura2(ANSI_BLUE+"No has elegido nada, por espabilao...\n"+ANSI_GREEN);
         }
-            System.out.println(ANSI_BLUE+"");
+        continuar(sc);
+        Imprimir(ANSI_PURPLE+"Acto seguido, la puerta de la sala se abre ¿quieres salir?"+ANSI_RESET);
+        System.out.println(ANSI_PURPLE+"(A)-Si, salir. (B)-No, no salir. (C)-Esperar."+ANSI_RESET);
+        if(eleccion=="si"){
+            Estructura(ANSI_BLUE+"Sales con normalidad"+ANSI_RESET);
+        }else{
+            Estructura(ANSI_BLUE+"Entran dos individuos totalmente tapados con una capa y un capirote blanco, te someten descargas eléctricas y te sacan a la fuerza de la habitación, seguidamente, ellos se quedan dentro de la sala y cierran la puerta\n"+ANSI_GREEN+"(Pierdes un poco de salud)"+ANSI_RESET);
+        }
+         Estructura(ANSI_BLUE+"La misma voz que te dio las instrucciones, vuelve a aparecer:\n"+RED_BOLD+"<< Te encuentras en un pasillo, si haces las cosas bien podrás salir de aquí y volver con tus compañeros... Ves tres puertas ¿verdad?, abre la que consideres que es la correcta, tienes treinta segundos para elegir... >>\n"+ANSI_RESET);
+        continuar(sc);
+
+        Estructura(ANSI_BLUE+"Te acercas a observar cada una de las puertas\n"+ANSI_RESET);
+        
+        System.out.println("puertas.");
+
+        eleccion=sc.nextLine().toLowerCase();
+
+        if(eleccion=="calavera"||eleccion=="paloma"||eleccion=="estrella"){
+            Estructura(ANSI_BLUE+"Entras en la habitación de la (elección), en la que hay un hombre con una soga al cuello, sobre una horca, el hombre te mira fijamente con lágrimas en los ojos, pero no dice ni una sola palabra…\n"+RED_BOLD+"<< Has elegido la opción de salvarle la vida o no, al sujeto que tienes delante, las reglas son muy claras, tienes 3 intentos para adivinar la palabra con las siguientes pistas, la respuesta correcta es una única palabra: >>"+ANSI_RESET);
+        }
+
+
+
+        System.out.println(ANSI_BLUE+"");
 
 
 
