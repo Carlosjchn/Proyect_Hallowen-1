@@ -29,7 +29,7 @@ public class Hpuser {
         for(i = 0; i < text.length(); i++){
             System.out.printf("%c", text.charAt(i));
         try{
-            Thread.sleep(0);
+            Thread.sleep(10);
         }catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
@@ -175,18 +175,18 @@ public class Hpuser {
         eleccion=sc.nextLine().toLowerCase();
         switch(eleccion){
             case "1","4","6":
-                Estructura2(ANSI_GREEN+"\t\t\t(Tu salud sube ligeramente)\n"+ANSI_RESET);
+                Estructura2(ANSI_GREEN+"\t\t\t(Tu salud sube ligeramente)"+ANSI_RESET);
                 vidaUser=vidaUser+5;
             break;
             case "2","3","5":
-                Estructura2(ANSI_GREEN+"\t\t\t(Tu salud baja ligeramente)\n"+ANSI_RESET);
+                Estructura2(ANSI_GREEN+"\t\t\t(Tu salud baja ligeramente)"+ANSI_RESET);
                 vidaUser=vidaUser-5;
             break;
             default:
                 Estructura2(ANSI_BLUE+"No has elegido nada, por espabilao...\n"+ANSI_GREEN);
         }
         Imprimir(ANSI_BLUE+"Acto seguido, la puerta de la sala se abre ¿quieres salir?\n"+ANSI_RESET);
-        System.out.println(ANSI_PURPLE+"(A)-Si, salir. (B)-No, no salir. (C)-Esperar."+ANSI_RESET);
+        System.out.println(ANSI_PURPLE+"\t(A)-Si, salir. \t(B)-No, no salir. \t(C)-Esperar."+ANSI_RESET);
 
         eleccion=sc.nextLine().toLowerCase();
 
@@ -206,7 +206,7 @@ public class Hpuser {
             Estructura2(RED_BOLD+"<< ¿Cual vas a elegir...? ¿'Esqueleto'... 'Angel' o... 'Estrella' >>"+ANSI_RESET);
             eleccion=sc.nextLine().toLowerCase();
             if(eleccion.equals("esqueleto")||eleccion.equals("angel")||eleccion2.equals("estrella")){
-                Estructura(ANSI_BLUE+"Entras en la habitación de la puerta"+eleccion+", en la que hay un hombre con una soga al cuello, sobre una horca, el hombre te mira fijamente con lágrimas en los ojos, pero no dice ni una sola palabra…\n"+RED_BOLD+"<< Has elegido la opción de salvarle la vida o no, al sujeto que tienes delante, las reglas son muy claras, tienes 3 intentos para adivinar la palabra con las siguientes pistas, la respuesta correcta es una única palabra: >>"+ANSI_RESET);    
+                Estructura(ANSI_BLUE+"Entras en la habitación de la puerta "+eleccion+", en la que hay un hombre con una soga al cuello, sobre una horca, el hombre te mira fijamente con lágrimas en los ojos, pero no dice ni una sola palabra…\n"+RED_BOLD+"<< Has elegido la opción de salvarle la vida o no, al sujeto que tienes delante, las reglas son muy claras, tienes 3 intentos para adivinar la palabra con las siguientes pistas, la respuesta correcta es una única palabra: >>"+ANSI_RESET);    
             buc=true;
             }else{
             System.out.println(RED_BOLD+"<< Elige una puerta, de una vez... >>"+ANSI_RESET);
@@ -215,7 +215,7 @@ public class Hpuser {
         }while(!buc);
         int i = 0;
         do{
-            Estructura(RED_BOLD+"<< Niños, llanto, cárcel, trauma >>\n << ¿Cual es la respuesta? >>"+ANSI_RESET);
+            Estructura2(RED_BOLD+"<< Niños, llanto, cárcel, trauma >>\n << ¿Cual es la respuesta? >>"+ANSI_RESET);
             eleccion=sc.nextLine().toLowerCase();
             if(eleccion.equals("Pederasta")||eleccion.equals("Pedofilo")||eleccion.equals("Pedófilo")||eleccion.equals("Pedrasta")||eleccion.equals("Pederastia")||eleccion.equals("Pedrastia")){
                 Estructura(ANSI_BLUE+"El hombre es liberado, luego entran unos encapuchados y se lo llevan de allí, al hombre solo le da tiempo a decir 'gracias'. \n \t\t\t"+ANSI_GREEN+"(Pierdes un poco de salud)"+ANSI_RESET);
