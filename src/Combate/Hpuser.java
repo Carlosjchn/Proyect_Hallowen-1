@@ -29,7 +29,7 @@ public class Hpuser {
         for(i = 0; i < text.length(); i++){
             System.out.printf("%c", text.charAt(i));
         try{
-            Thread.sleep(10);
+            Thread.sleep(25);
         }catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
@@ -144,7 +144,8 @@ public class Hpuser {
                             switch(eleccion2){
                                 case "a":
                                     Estructura(ANSI_BLUE+"La anciana la bebe y se muere, era"+ANSI_RED+" veneno..."+ANSI_GREEN+"\n\t\t\t(Tu salud aumenta por la buena decision)"+ANSI_RESET);
-                                    vidaUser=vidaUser+10;
+                                    vidaUser=vidaUser+
+                                    10;
                                 break;
                                 case "b":
                                     Estructura(ANSI_BLUE+"Al poco tiempo, empiezas a tener fiebre, vomitas sangre y se te nubla la visión"+ANSI_GREEN+"\n\t\t\t(Tu salud disminuye bastante)"+ANSI_RESET);
@@ -205,7 +206,7 @@ public class Hpuser {
         do{
             Estructura2(RED_BOLD+"<< ¿Cual vas a elegir...? ¿'Esqueleto'... 'Angel' o... 'Estrella' >>"+ANSI_RESET);
             eleccion=sc.nextLine().toLowerCase();
-            if(eleccion.equals("esqueleto")||eleccion.equals("angel")||eleccion2.equals("estrella")){
+            if(eleccion.equals("esqueleto")||eleccion.equals("angel")||eleccion.equals("estrella")){
                 Estructura(ANSI_BLUE+"Entras en la habitación de la puerta "+eleccion+", en la que hay un hombre con una soga al cuello, sobre una horca, el hombre te mira fijamente con lágrimas en los ojos, pero no dice ni una sola palabra…\n"+RED_BOLD+"<< Has elegido la opción de salvarle la vida o no, al sujeto que tienes delante, las reglas son muy claras, tienes 3 intentos para adivinar la palabra con las siguientes pistas, la respuesta correcta es una única palabra: >>"+ANSI_RESET);    
             buc=true;
             }else{
@@ -215,14 +216,15 @@ public class Hpuser {
         }while(!buc);
         int i = 0;
         do{
-            Estructura2(RED_BOLD+"<< Niños, llanto, cárcel, trauma >>\n << ¿Cual es la respuesta? >>"+ANSI_RESET);
+            Estructura2(RED_BOLD+"<< Niños, llanto, cárcel, trauma, abuso >>\n << ¿Cual es la respuesta? >>"+ANSI_RESET);
             eleccion=sc.nextLine().toLowerCase();
-            if(eleccion.equals("Pederasta")||eleccion.equals("Pedofilo")||eleccion.equals("Pedófilo")||eleccion.equals("Pedrasta")||eleccion.equals("Pederastia")||eleccion.equals("Pedrastia")){
+            if(eleccion.equals("pederasta")||eleccion.equals("pedofilo")||eleccion.equals("pedófilo")||eleccion.equals("pedrasta")||eleccion.equals("pederastia")||eleccion.equals("pedrastia")){
                 Estructura(ANSI_BLUE+"El hombre es liberado, luego entran unos encapuchados y se lo llevan de allí, al hombre solo le da tiempo a decir 'gracias'. \n \t\t\t"+ANSI_GREEN+"(Pierdes un poco de salud)"+ANSI_RESET);
                 vidaUser=vida_user-5;
+                i=4;
             }else{
                 i++;
-                Estructura2(ANSI_RED+"Vuelve a intentarlo... has usado "+i+"intentos..."+ANSI_RESET);
+                Estructura2(ANSI_RED+"Vuelve a intentarlo... has usado "+i+" intentos..."+ANSI_RESET);
             }
         }while(i<3);
         
