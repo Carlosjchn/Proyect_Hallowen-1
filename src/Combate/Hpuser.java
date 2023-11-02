@@ -30,7 +30,7 @@ public class Hpuser {
         for(i = 0; i < text.length(); i++){
             System.out.printf("%c", text.charAt(i));
         try{
-            Thread.sleep(0);
+            Thread.sleep(25);
         }catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
@@ -124,7 +124,7 @@ public class Hpuser {
                                 break;
                                 case "b","perro":
                                     Estructura(ANSI_BLUE+"El perro muy asustado te muerde. Provocándote una herida en el antebrazo."+ANSI_BLUE+"\nTe ves obligado a estrangular al perro con su propia cadena hasta asfixiarlo"+ANSI_RESET);
-                                    vidaUser=vidaUser-15;
+                                    vidaUser=vidaUser-5;
                                 break;
                                 case "c","nada":
                                     Estructura(ANSI_BLUE+"No ocurre absolutamente nada."+ANSI_RESET);
@@ -145,12 +145,11 @@ public class Hpuser {
                             switch(eleccion2){
                                 case "a":
                                     Estructura(ANSI_BLUE+"La anciana la bebe y se muere, era"+ANSI_RED+" veneno..."+ANSI_RESET);
-                                    vidaUser=vidaUser+
-                                    10;
+                                    vidaUser=vidaUser+5;
                                 break;
                                 case "b":
                                     Estructura(ANSI_BLUE+"Al poco tiempo, empiezas a tener fiebre, vomitas sangre y se te nubla la visión"+ANSI_RESET);
-                                    vidaUser=vidaUser-25;
+                                    vidaUser=vidaUser-5;
                                 break;
                                 default:
                                     System.out.println(ANSI_RED+"\t\t\tCREO QUE TE HAS EQUIVOCADO DE OPCION"+ANSI_RESET);
@@ -174,19 +173,25 @@ public class Hpuser {
 
         
         System.out.println(ANSI_PURPLE+"El dispositivo con el que estabas encadenado se libera, te levantas y te diriges a la mesa, observas los objetos que hay en ella y te dispones a coger tres de ellos.\n \t(1)-VENDAS \t(2)-PASTILLAS \t(3)-TRAPO HÚMEDO \n\t(4)-CRUCIFIJO PLATEADO \t(5)-LLAVE DE ORO \t(6)-ELIXIR MISTERIOSO"+ANSI_RESET);
+        int k=0;
+        do{
         eleccion=sc.nextLine().toLowerCase();
         switch(eleccion){
             case "1","4","6":
                 Estructura2(ANSI_BLUE+"\t\t\t(Este objeto te es de valor.)"+ANSI_RESET);
                 vidaUser=vidaUser+5;
+                k++;
             break;
             case "2","3","5":
                 Estructura2(ANSI_BLUE+"\t\t\t(Este objeto es tan inutil que hasta te molesta...)"+ANSI_RESET);
                 vidaUser=vidaUser-5;
+                k++;
             break;
             default:
                 Estructura2(ANSI_BLUE+"No has elegido nada, por espabilao...\n"+ANSI_RESET);
+                k++;
         }
+        }while(k<3);
         Imprimir(ANSI_BLUE+"Acto seguido, la puerta de la sala se abre ¿quieres salir?\n"+ANSI_RESET);
         System.out.println(ANSI_PURPLE+"\t(A)-Si, salir. \t(B)-No, no salir. \t(C)-Esperar."+ANSI_RESET);
 
@@ -286,7 +291,7 @@ public class Hpuser {
                 int r=aleatorio.nextInt(4);
                     switch (r) {
                         case 1:
-                            Estructura(ANSI_BLUE+"Recapacitas y decides que no es para tanto, que podrías ayudarle (el hombre de la habitación te captura y te tiene como su rehén quitándote"+ANSI_RESET);
+                            Estructura(ANSI_BLUE+"Recapacitas y decides que no es para tanto, que podrías ayudarle\n el hombre de la habitación te captura y te tiene como su rehén.\n de repente te desmayas..."+ANSI_RESET);
                             vidaUser=vidaUser-10;
                             continuar(sc);
                         break;
@@ -307,7 +312,7 @@ public class Hpuser {
                     switch (p) {
                         case 1:
                             Estructura(ANSI_BLUE+"Decides soltarlo...\n Te ayuda a encontrar la salida."+ANSI_RESET);
-                            vidaUser=vidaUser+10;
+                            vidaUser=vidaUser+5;
                             continuar(sc);
                         break;
                         case 2:
@@ -316,7 +321,7 @@ public class Hpuser {
                         break;
                         case 3:
                             Estructura(ANSI_BLUE+"Está en muy mal estado y solo dice cosas sin sentido. \n hace tanto ruido que despierta al verdadero asesino que tiene capturado al hombre");
-                            vidaUser=vidaUser-10;
+                            vidaUser=vidaUser-5;
                             continuar(sc);
                         break;
                     }
@@ -329,7 +334,8 @@ public class Hpuser {
             }
         }while(!buc);
 
-        Estructura(ANSI_BLUE+"Finalmente consigues salir de esta pesadilla. \n Lo unico que recuerdas claramente es un numero... recuerdalo bien:"+ANSI_RESET+BLUE_BOLD+"\n\t\t\t"+vidaUser);
+        int vidaUserFinal=aleatorio.nextInt(50)-25;
+        Estructura(ANSI_BLUE+"Finalmente consigues salir de esta pesadilla. \n Lo unico que recuerdas claramente es un numero... recuerdalo bien:"+ANSI_RESET+BLUE_BOLD+"\n\t\t\t"+vidaUserFinal+"");
         continuar(sc);
 
         TXT_BIENVENIDA="¡GRACIAS POR JUGAR!";
@@ -338,7 +344,7 @@ public class Hpuser {
         Separador();
         System.out.println(ANSI_PURPLE + TXT_BIENVENIDA + "\n" + SUBRAYA.repeat(TXT_BIENVENIDA.length())+ ANSI_RESET);
         System.out.println("\n"+ANSI_BLUE + TXT_EXPLICACION + "\n" + SUBRAYA.repeat(TXT_EXPLICACION.length()));
-        System.out.println(ANSI_BLUE+"Aqui acaba la Historia interactiva... \n  una vez mas Recuerda este numero es MUY importante: "+vidaUser+"\n ¡ADIOS!"+ANSI_RESET);
+        System.out.println(ANSI_BLUE+"Aqui acaba la Historia interactiva... \n  una vez mas Recuerda este numero es MUY importante: "+vidaUserFinal+""+"\n ¡ADIOS!"+ANSI_RESET);
         Separador();
 
     }
