@@ -30,7 +30,7 @@ public class Hpuser {
         for(i = 0; i < text.length(); i++){
             System.out.printf("%c", text.charAt(i));
         try{
-            Thread.sleep(25);
+            Thread.sleep(0);
         }catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
@@ -226,7 +226,7 @@ public class Hpuser {
             eleccion=sc.nextLine().toLowerCase();
             if(eleccion.equals("pederasta")||eleccion.equals("pedofilo")||eleccion.equals("pedófilo")||eleccion.equals("pedrasta")||eleccion.equals("pederastia")||eleccion.equals("pedrastia")){
                 Estructura(ANSI_BLUE+"El hombre es liberado, luego entran unos encapuchados y se lo llevan de allí, al hombre solo le da tiempo a decir 'gracias'."+ANSI_RESET);
-                vidaUser=vida_user-5;
+                vidaUser=vidaUser-5;
                 i=4;
             }else{
                 i++;
@@ -334,7 +334,8 @@ public class Hpuser {
             }
         }while(!buc);
 
-        int vidaUserFinal=aleatorio.nextInt(50)-25;
+        // int vidaUserFinal=aleatorio.nextInt(50)-25;        
+        int vidaUserFinal=vidaUser;
         Estructura(ANSI_BLUE+"Finalmente consigues salir de esta pesadilla. \n Lo unico que recuerdas claramente es un numero... recuerdalo bien:"+ANSI_RESET+BLUE_BOLD+"\n\t\t\t"+vidaUserFinal+"");
         continuar(sc);
 
